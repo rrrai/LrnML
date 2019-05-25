@@ -6,27 +6,43 @@ My machine learning Ubuntu Environment
 sudo apt-get update
 sudo apt-get upgrade
 
+# Install Terminator terminal
+sudo apt-get install terminator 
+
 # Install Samba to make the remote machine discoverable
 sudo apt install samba
+
 Make a directory to share files between windows desktop
+
 mkdir /home/<username>/sambashare/
+
 sudo nano /etc/samba/smb.conf
+
 and add following at the bottom
+
 [sambashare]
     comment = Samba on Ubuntu
     path = /home/username/sambashare
     read only = no
     browsable = yes
+
 sudo service smbd restart    
 
 # Configure VNC with Gnome
+
 sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal -y
+
 sudo apt-get -y install tightvncserver
+
+test the server
 vncserver
+
 ps -ef | grep Xtightvnc
 vncserver -kill :X 
 cp ~/.vnc/xstartup ~/.vnc/xstartup_backup
+
 nano ~/.vnc/xstartup
+Edit the file to reflect following
 
 #!/bin/sh
 def
