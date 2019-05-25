@@ -28,8 +28,26 @@ conda create -n wft-ml
 
 source /opt/anaconda/bin/activate wft-ml
 
+### Create a personal environment
+
 /opt/anaconda/bin/conda create -n my_env package1 package2
 
-# Use pip to install non conda pacakges for everyone
+### Use pip to install non conda pacakges for everyone
+
 su anaconda
+
 /opt/anaconda/bin/pip install packageX
+
+
+# Update the environment so all users have conda directory in their path. add /opt/anaconda/bin
+
+sudo vim /etc/environment
+
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/anaconda/bin"
+
+
+# Update conda env
+/opt/anaconda/bin/conda update conda
+/opt/anaconda/bin/conda update anaconda
+
+
