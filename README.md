@@ -59,6 +59,3 @@ sudo apt-get install vim csh flex gfortran libgfortran3 g++ \
                      lsb-base net-tools network-manager \
                      git-core git-gui git-doc xclip gdebi-core
                      
-# Install Anaconda from https://www.anaconda.com/distribution/
-Installed current version for your platform. Extract and chmod +x AnacondaFile.sh
-Use default option for now
