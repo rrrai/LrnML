@@ -65,13 +65,25 @@ vncserver -geometry 1920x1080 -depth 24
 
 
 
-# Configure remote desktop with Gnome
+# Configure remote desktop XRDP with Gnome
 
-sudo apt-get install ubuntu-gnome-desktop
+$ sudo apt-get install ubuntu-gnome-desktop
 
-sudo apt-get install -y xrdp 
+$ sudo apt-get install -y xrdp 
 
-sudo systemctl enable xrdp
+$ sudo systemctl enable xrdp
+
+sudo sed -e 's/^new_cursors=true/new_cursors=false/g' \
+           -i /etc/xrdp/xrdp.ini
+
+
+    cat <<EOF > ~/.xsessionrc
+    export GNOME_SHELL_SESSION_MODE=ubuntu
+    export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+    export XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+    export XDG_CONFIG_DIRS=/etc/xdg/user-dirs.conf:/etc/xdg
+    EOF
+    
 
 $ sudo nano /etc/xrdp/xrdp.ini
     encrypt_level=high
@@ -94,10 +106,8 @@ add following
     }
     });
 
+$ sudo systemctl restart xrdp
 
-
-$ sudo apt-get install mate-core mate-desktop-environment mate-notification-daemon
-$ sudo sed -i.bak '/fi/a #xrdp multiple users configuration \n mate-session \n' /etc/xrdp/startwm.sh
 
 $ sudo ufw allow 3389/tcp
 $ sudo /etc/init.d/xrdp restart
