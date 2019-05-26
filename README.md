@@ -1,5 +1,5 @@
 # LrnML
-My machine learning Ubuntu Environment
+Machine learning Ubuntu Environment Setup
 
 # Update Ubuntu after install
 
@@ -7,27 +7,31 @@ $ sudo apt-get update
 
 $ sudo apt-get upgrade
 
+
+
 # Install Terminator terminal
 $ sudo apt-get install terminator 
 
 # Install Samba to make the remote machine discoverable
-sudo apt install samba
+$ sudo apt install samba
 
 Make a directory to share files between windows desktop
 
-mkdir /home/<username>/sambashare/
+$ mkdir /home/<username>/sambashare/
 
-sudo nano /etc/samba/smb.conf
+add following at the bottom
 
-and add following at the bottom
+$ sudo nano /etc/samba/smb.conf
 
-[sambashare]
+    [sambashare]
     comment = Samba on Ubuntu
     path = /home/username/sambashare
     read only = no
     browsable = yes
 
-sudo service smbd restart    
+$ sudo service smbd restart    
+
+
 
 # Configure VNC with Gnome
 
@@ -36,20 +40,21 @@ sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity n
 sudo apt-get -y install tightvncserver
 
 test the server
-vncserver
+$ vncserver
 
 ps -ef | grep Xtightvnc
 vncserver -kill :X 
 cp ~/.vnc/xstartup ~/.vnc/xstartup_backup
 
 nano ~/.vnc/xstartup
+
 Edit the file to reflect following
 
-#!/bin/sh
-def
-export XKL_XMODMAP_DISABLE=1
-unset SESSION_MANAGER
-unset DBUS_SESSION_BUS_ADDRESS
+    #!/bin/sh
+    def
+    export XKL_XMODMAP_DISABLE=1
+    unset SESSION_MANAGER
+    unset DBUS_SESSION_BUS_ADDRESS
 
 xrdb $HOME/.Xresources
 xsetroot -solid grey
@@ -68,11 +73,14 @@ sudo apt-get install -y xrdp
 
 sudo systemctl enable xrdp
 
+$ sudo nano /etc/xrdp/xrdp.ini
+    encrypt_level=high
+
 sudo sed -i 's/allowed_users=console/allowed_users=anybody/' /etc/X11/Xwrapper.config
 
 $ sudo nano /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf
 
-#### add following
+add following
 
     polkit.addRule(function(action, subject) {
     if ((action.id == "org.freedesktop.color-manager.create-device" ||
@@ -88,8 +96,8 @@ $ sudo nano /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf
 
 
 
-sudo apt-get install mate-core mate-desktop-environment mate-notification-daemon
-sudo sed -i.bak '/fi/a #xrdp multiple users configuration \n mate-session \n' /etc/xrdp/startwm.sh
+$ sudo apt-get install mate-core mate-desktop-environment mate-notification-daemon
+$ sudo sed -i.bak '/fi/a #xrdp multiple users configuration \n mate-session \n' /etc/xrdp/startwm.sh
 
 $ sudo ufw allow 3389/tcp
 $ sudo /etc/init.d/xrdp restart
