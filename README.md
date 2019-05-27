@@ -120,9 +120,7 @@ $ sudo add-apt-repository universe
 
 $ sudo apt install gnome-tweak-tool -y
 
-$ gnome-tweaks
-
-### turn on Extensions, Ubuntu appindicators and Ubuntu dock 
+$ gnome-tweaks -> and turn on Extensions, Ubuntu appindicators and Ubuntu dock 
 
 $ sudo ufw allow 3389/tcp
 
