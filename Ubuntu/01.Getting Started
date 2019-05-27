@@ -1,0 +1,32 @@
+
+# Update Ubuntu after install
+
+$ sudo apt-get update
+
+$ sudo apt-get upgrade
+
+# Lets install basic utilities. 
+
+
+## Install Terminator terminal - a better terminal
+$ sudo apt-get install terminator 
+
+## Samba to make the remote machine discoverable
+$ sudo apt install samba
+
+Make a directory to share files between windows desktop
+
+$ mkdir /home/<username>/sambashare/
+
+add following at the bottom
+
+$ sudo nano /etc/samba/smb.conf
+
+    [sambashare]
+    comment = Samba on Ubuntu
+    path = /home/username/sambashare
+    read only = no
+    browsable = yes
+
+$ sudo service smbd restart    
+
