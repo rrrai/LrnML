@@ -5,7 +5,7 @@ check for solution for XRDP on http://c-nergy.be/blog/?cat=79
 
 
 
-# Configure remote desktop XRDP with Gnome
+## Configure remote desktop XRDP with Gnome
 
 $ sudo apt-get install ubuntu-gnome-desktop
 
@@ -68,3 +68,7 @@ $ sudo ufw allow 3389/tcp
 $ sudo systemctl restart xrdp
 
 $ sudo /etc/init.d/xrdp restart
+
+# References
+http://c-nergy.be/blog/?cat=79
+
