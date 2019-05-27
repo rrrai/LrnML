@@ -1,1 +1,25 @@
+# Install for all users
 
+## Parallel processing
+
+### Install ipyparallel - Interactive Parallel Computing with IPython - https://github.com/ipython/ipyparallel
+
+$ conda install -c anaconda ipyparallel
+
+Enable the IPython Clusters tab in Jupyter Notebook:
+
+$ ipcluster nbextension enable
+
+$ ipcluster start
+
+$ ipcluster nbextension disable
+
+### JupyterHub Install - To install for all users on JupyterHub, as root:
+
+  jupyter nbextension install --sys-prefix --py ipyparallel
+  jupyter nbextension enable --sys-prefix --py ipyparallel
+  jupyter serverextension enable --sys-prefix --py ipyparallel
+
+### Install Pandaral·lel - https://github.com/nalepae/pandarallel
+
+$ /opt/anaconda/bin/pip install pandarallel
