@@ -2,7 +2,7 @@
 
 sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal -y
 
-sudo apt-get -y install tightvncserver
+sudo apt-get -y install tightvncserver 
 
 test the server
 $ vncserver
@@ -28,3 +28,10 @@ gnome-session &
 
 vncserver -geometry 1920x1080 -depth 24
 
+# References
+
+https://www.smarthomebeginner.com/setup-vnc-server-on-ubuntu-linux/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04
+
+https://linuxize.com/post/how-to-install-and-configure-vnc-on-ubuntu-18-04/
