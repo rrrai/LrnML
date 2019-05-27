@@ -1,36 +1,6 @@
 # LrnML
 Machine learning Ubuntu Environment Setup
 
-# Update Ubuntu after install
-
-$ sudo apt-get update
-
-$ sudo apt-get upgrade
-
-
-
-# Install Terminator terminal
-$ sudo apt-get install terminator 
-
-# Install Samba to make the remote machine discoverable
-$ sudo apt install samba
-
-Make a directory to share files between windows desktop
-
-$ mkdir /home/<username>/sambashare/
-
-add following at the bottom
-
-$ sudo nano /etc/samba/smb.conf
-
-    [sambashare]
-    comment = Samba on Ubuntu
-    path = /home/username/sambashare
-    read only = no
-    browsable = yes
-
-$ sudo service smbd restart    
-
 
 
 # Configure VNC with Gnome
