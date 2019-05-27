@@ -30,3 +30,6 @@ $ sudo nano /etc/samba/smb.conf
 
 $ sudo service smbd restart    
 
+id <username>
+groups <username>
+usermod -a -G adm,anaconda,cdrom,sudo,dip,plugdev,lpadmin,sambashare,xrdp <username>
