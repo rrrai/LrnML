@@ -105,17 +105,30 @@ add following
     }
     });
 
-$ sudo systemctl restart xrdp
+Do this with root account due to permission
 
+$ sudo nano /etc/polkit-1/localauthority/50-local.d/color.pkla
 
-$ sudo ufw allow 3389/tcp
-$ sudo /etc/init.d/xrdp restart
+    [Allow colord for all users]
+    Identity=unix-user:*
+    Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile
+    ResultAny=yes
+    ResultInactive=yes
+    ResultActive=yes
 
 $ sudo add-apt-repository universe
+
 $ sudo apt install gnome-tweak-tool -y
+
 $ gnome-tweaks
 
-___turn on Extensions, Ubuntu appindicators and Ubuntu dock 
+### turn on Extensions, Ubuntu appindicators and Ubuntu dock 
+
+$ sudo ufw allow 3389/tcp
+
+$ sudo systemctl restart xrdp
+
+$ sudo /etc/init.d/xrdp restart
 
 
 # Basic coding, ML, and scientific applications install
