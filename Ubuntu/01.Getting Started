@@ -4,8 +4,13 @@
 $ sudo apt-get update
 
 $ sudo apt-get upgrade
+sudo apt install net-tools
 
 # Lets install basic utilities. 
+## install net tools
+sudo apt install net-tools
+## Synergy for KVM
+sudo apt install ./synergy_1.11.1.stable~b58+55ec3105_ubuntu19_amd64.deb 
 
 
 ## Install Terminator terminal - a better terminal
