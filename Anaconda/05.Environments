@@ -23,3 +23,7 @@ Update conda 	conda update conda
 Update Anaconda 	conda update anaconda
 Update all packages 	conda update --all
 
+
+Reference
+
+https://pybit.es/guest-anaconda-workflow.html
