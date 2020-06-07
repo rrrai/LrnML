@@ -1,0 +1,23 @@
+# Environment name
+name: lrn-ml
+
+#Channels with packages
+channels:
+  - conda-forge
+
+#all the packages required
+dependencies:
+ - numpy
+ - pandas
+ - seaborn
+ - matplotlib
+ - scipy
+ - jupyter
+ 
+ # all pip packages
+  - pip
+  - pip: # Pip specific installs 
+  - untangle==1.1.1 # Define specific version
+ 
+ #install directory 
+ prefix: /home/rrr/anaconda3/envs/lrn-ml
