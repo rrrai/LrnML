@@ -1,1 +1,25 @@
+TL;DR
+
+Too Long; Dint't Read? I've got you covered!
+Task 	Command
+Create virtual environment 	conda create --name ENVNAME
+Activate environment 	conda activate ENVNAME
+Deactivate environment 	conda deactivate
+List virtual environments 	conda env list
+Remove virtual environment 	conda env remove --name ENVNAME
+Search for packages 	conda search PACKAGENAME
+Install packages 	conda install PACKAGE1 PACKAGE2...
+Install package in other env 	conda install --name ENVNAME PACKAGENAME
+Search alternate channel 	conda search -c CHANNELNAME PACKAGENAME
+Install from channel 	conda install -c CHANNELNAME PACKAGENAME
+Add additional channel 	conda config --add channels CHANNELNAME
+Remove packages 	conda remove PACKAGE1 PACKAGE2...
+Create env and install packages 	conda create --name ENVNAME PACKAGE1 PACKAGE2...
+Export env config 	conda env export > environment.yml
+Create env from environment.yml 	conda env create
+List packages 	conda list
+Clone environment 	conda create --clone ORIGINALENV --name NEWENV
+Update conda 	conda update conda
+Update Anaconda 	conda update anaconda
+Update all packages 	conda update --all
 
